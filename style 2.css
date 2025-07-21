@@ -1,0 +1,75 @@
+
+body {
+  background: #222;
+  color: #eee;
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 20px 0;
+}
+
+#board-container {
+  overflow-x: auto;
+  max-width: 100%;
+  margin: auto;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(9, 60px);
+  gap: 2px;
+  margin: auto;
+  justify-content: start;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  background-color: #444;
+  border: 1px solid #666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.cell.selected {
+  background-color: #666;
+}
+
+.cell svg {
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+}
+
+#log {
+  margin-top: 20px;
+  max-width: 100%;
+  font-size: 14px;
+  text-align: left;
+  white-space: pre-wrap;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .cell {
+    width: 40px;
+    height: 40px;
+  }
+
+  #board {
+    grid-template-columns: repeat(9, 40px);
+  }
+
+  .cell svg {
+    width: 28px;
+    height: 28px;
+  }
+}
